@@ -1,1 +1,22 @@
-<p>Waiting for commands.</p>
+<div class="jumbotron" ng-app="musicBox">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Hello <%=@current_user.email%></h3>
+    </div>
+</div>
+
+<div class="list-group" ng-controller="MusicList">
+    <div class="list-group-item" ng-repeat="audio in audios">
+        <div class="row-action-primary" ng-click='playSong()'>
+            <i class="mdi-av-play-arrow"></i>
+        </div>
+        <div class="row-content">
+            <div class="least-content">{{audio.duration}}</div>
+            <h4 class="list-group-item-heading">{{audio.artist}}</h4>
+            <p class="list-group-item-text">{{audio.title}}</p>
+            <audio id="song_{{audio.aid}}" ng-src="{{trustSrc(audio.url)}}"></audio>
+        </div>
+    </div>
+   
+</div>
+</div>

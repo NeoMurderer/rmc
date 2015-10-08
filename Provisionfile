@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sudo apt-get update && sudo apt-get dist-upgrade -y
+
+sudo apt-get install software-properties-common -y
+sudo apt-add-repository ppa:brightbox/ruby-ng -y
+sudo apt-get update
+
+sudo apt-get install ruby2.2 ruby2.2-dev -y
+sudo gem update --system
+sudo gem update
+sudo gem install bundler
+
+sudo apt-get install zlib1g-dev libssl-dev libmysqlclient-dev g++ -y
+
+# sudo su vagrant -c 'cd /vagrant && bundle install'

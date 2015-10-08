@@ -5,3 +5,8 @@
   <%= f.password_field :password %>
   <%= f.submit %>
 <% end %>
+<%= link_to @vk_url, class: 'btn btn-primary' do %>
+  <i class="icon-home icon-white"></i>
+  Войти через ВКонтакте
+<% end %>
+<%=@user_session.errors.messages%>

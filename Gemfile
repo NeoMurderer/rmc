@@ -10,6 +10,8 @@ gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'websocket-rails'
+gem 'vkontakte_api', '~> 1.4'
+gem 'angularjs-rails'
 
 group :development do
   gem 'byebug'

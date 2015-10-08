@@ -6,9 +6,9 @@ default: &default
 development:
   <<: *default
   database: musicbox_development
-  # username: musicbox
-  # password:
-  # host: localhost
+  username: postgres
+  password: test
+  host: localhost
   # port: 5432
   # schema_search_path: myapp,sharedapp,public
   # min_messages: notice

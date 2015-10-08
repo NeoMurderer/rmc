@@ -24,7 +24,11 @@ class EventsController < ApplicationController
   end
 
   def notify(user, params)
-    connection = WebsocketRails.users[.id]
+    connection = WebsocketRails.users[user.id]
+
+    Rails.logger.error '###############################'
+    Rails.logger.error connection
+    Rails.logger.error '###############################'
     connection.send_message :fired, { data: params.except!(:email, :password, :controller, :action) }
   end
 
