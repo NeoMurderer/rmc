@@ -1,7 +1,7 @@
 VkontakteApi.configure do |config|
   config.app_id       = '5098674'      # ID приложения
   config.app_secret   = 'GZfcaiS8O4dNNoLaiBGe' # защищенный ключ
-  config.redirect_uri = 'http://localhost:3000/session/callback'
+  config.redirect_uri = 'http://localhost:3000/callback'
   # Authorization parameters (not needed when using an external authorization):
   # config.app_id       = '123'
   # config.app_secret   = 'AbCdE654'

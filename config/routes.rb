@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   post :fire, to: 'events#fire'
   get :find, to: 'vk#find'
+  get :callback, to: 'dashboard#callback'
 end
