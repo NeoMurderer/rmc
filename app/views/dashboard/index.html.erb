@@ -6,21 +6,19 @@
 
     </div>
     <div class="panel-body">
-    <div class="input-group"> 
-                <input type="text" class="form-control " ng-model="song_name" placeholder="Song name">   
+    <div class="input-group">
+                <input type="text" class="form-control " ng-model="song_name" placeholder="Song name">
 
-        <span class="input-group-btn"> 
+        <span class="input-group-btn">
             <button type="submit" ng-click="findSong()" class="btn btn-primary">Submit</button>
         </span>
         </div>
     </div>
 </div>
-<% if !defined?(session[:vk_id]) %>
 
 <%= link_to @vk_url, class: 'btn btn-primary' do %>
   <i class="icon-home icon-white"></i>
   Войти через ВКонтакте
-<% end %>
 
 <% end %>
 <div class="list-group" >
@@ -35,6 +33,6 @@
             <audio id="song_{{audio.aid}}" onended="playNext()" preload="none" ng-src="{{trustSrc(audio.url)}}"></audio>
         </div>
     </div>
-   
+
 </div>
 </div>
