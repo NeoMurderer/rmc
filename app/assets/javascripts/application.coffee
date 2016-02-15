@@ -1,7 +1,11 @@
 # = require jquery
-# = require jquery_ujs
+# = require bootstrap
 # = require angular
-#= require angular-resource
+# = require angular-ui-router
+# = require angular-soundmanager3
+# = require angular-resource
+# = require angular-local-storage
 # = require websocket_rails/main
+# = require angular-websocket
 # = require_tree .
 # = require_tree ./controllers

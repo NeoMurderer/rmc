@@ -27,9 +27,9 @@ class EventsController < ApplicationController
     connection = WebsocketRails.users[user.id]
 
     Rails.logger.error '###############################'
-    Rails.logger.error connection
+    Rails.logger.error params
     Rails.logger.error '###############################'
-    connection.send_message :fired, { data: params.except!(:email, :password, :controller, :action) }
+    connection.send_message :fired, { action: params['user_action'],params: params['user_data']  }
   end
 
   def user_session_params

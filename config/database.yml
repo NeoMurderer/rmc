@@ -15,7 +15,7 @@ development:
 
 test:
   <<: *default
-  database: musicbox_test
+  database: musicbox_development
 
 # DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 production:

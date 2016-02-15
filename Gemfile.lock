@@ -36,7 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    angularjs-rails (1.4.8)
+    angularjs-rails (1.5.0)
     arel (6.0.3)
     authlogic (3.4.6)
       activerecord (>= 3.2)
@@ -46,6 +46,7 @@ GEM
     awesome_print (1.6.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bower-rails (0.10.0)
     builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -89,7 +90,7 @@ GEM
       faraday (~> 0.9.0)
       faraday_middleware (~> 0.9.1)
       oj (~> 2.0)
-    faye-websocket (0.10.2)
+    faye-websocket (0.10.0)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
     ffi (1.9.10)
@@ -155,6 +156,7 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -243,15 +245,18 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails
   authlogic
+  bower-rails
   byebug
   cancancan
   coffee-rails
   debbie
+  faye-websocket (= 0.10.0)
   gon
   jbuilder
   jquery-rails
   pg
   quiet_assets
+  rack-cors
   rails (= 4.2.4)
   sass-rails
   spring

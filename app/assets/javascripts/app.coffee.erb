@@ -1,0 +1,17 @@
+angular.module 'musicBox', [
+  'ngResource',
+  'ui.router',
+  'LocalStorageModule',
+  'ngWebSocket',
+  'angularSoundManager'
+  ]
+  .config ($stateProvider, $urlRouterProvider,$httpProvider) ->
+    $urlRouterProvider.otherwise("/home");
+    $stateProvider
+      .state 'home', {
+        url: "/home"
+        templateUrl: "<%=asset_path('templates/home.html')%>"
+        controller:'HomeCtrl'
+      }
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+    return

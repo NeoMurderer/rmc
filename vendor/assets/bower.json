@@ -1,0 +1,11 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "angular-ui-router": "latest",
+    "angular-soundmanager3": "latest",
+    "angular-local-storage": "latest",
+    "angular-websocket": "latest"
+  }
+}
