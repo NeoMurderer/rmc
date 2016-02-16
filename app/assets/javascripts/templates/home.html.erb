@@ -60,7 +60,7 @@
   <button clear-playlist>Clear Playlist</button>
   <button play-all='tracks' data-play="false">Add all tracks</button>
   <div class="list-group">
-    <div class="list-group-item" ng-repeat="track in tracks" >
+    <div class="list-group-item" ng-repeat="track in playlist" >
       <div class="row-action-primary">
         <i class="fa pull-left fa-play-circle fa-3x" play-from-playlist="track"  ng-if="(!isPlaying && currentPlaying.id == track.id) || currentPlaying.id !== track.id" ></i>
        <i class="fa pull-left fa-3x fa-pause-circle" pause-music ng-show="currentPlaying.id == track.id" ng-if="isPlaying"></i>

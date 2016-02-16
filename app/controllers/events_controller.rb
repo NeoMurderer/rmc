@@ -11,7 +11,6 @@ class EventsController < ApplicationController
       render nothing: true, status: :forbidden
     end
   end
-
   private
 
   def authorize(params)

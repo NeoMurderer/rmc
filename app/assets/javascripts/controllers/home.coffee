@@ -41,6 +41,7 @@ angular.module 'musicBox'
 		});
 		Tracks.get({name:$scope.song_name}).$promise.then((tracks) ->
 			$scope.tracks = tracks.data
+			$scope.updatePlaylist()
 		);
 
 
