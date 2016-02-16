@@ -12,29 +12,36 @@ angular.module 'musicBox'
 		catch error
 			console.log error
 	)
+	$scope.updatePlaylist = () ->
+		angularPlayer.clearPlaylist (data) ->
+			#add songs to playlist
+			if !$scope.tracks
+				return
+			i = 0
+			while i < $scope.tracks.length
+				angularPlayer.addTrack $scope.tracks[i]
+				i++
+			return
+		return
 	$scope.loadTracks = () ->
 		Tracks.get().$promise.then (tracks) ->
-		 	$scope.tracks = tracks.data.splice(1, tracks.data.length);
+		 	$scope.tracks = tracks.data;
 		 	localStorageService.set("tracks", $scope.tracks);
+			$scope.updatePlaylist()
 			return
 
 	if localStorageService.get('tracks')
 		$scope.tracks = localStorageService.get('tracks')
+		$scope.updatePlaylist()
 	else
 		$scope.loadTracks()
-	# $scope.findSong = function() {
-	# 	var audiosResource = $resource('/find',{
-	# 		name:"@name"
-	# 	});
-	# 	audiosResource.get({name:$scope.song_name}).$promise.then(function(audios) {
-	# 		$scope.audios = audios.data.splice(1, audios.data.length);
-	#
-	# 	});
-	# }
+	$scope.findSong = () ->
+		audiosResource = $resource('/find',{
+			name:"@name"
+		});
+		Tracks.get({name:$scope.song_name}).$promise.then((tracks) ->
+			$scope.tracks = tracks.data
+		);
 
-  $scope.playTrack = (track) ->
-    $timeout (->
-      angularPlayer.playTrack(track.id)
-    ), 0
-		return
+
 	];

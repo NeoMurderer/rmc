@@ -11,6 +11,7 @@
         <input class="form-control " ng-model="song_name" placeholder="Song name" type="text">
         <span class="input-group-btn">
           <button class="btn btn-primary" ng-click="findSong()" type="submit">Submit</button>
+          <button class="btn btn-primary" ng-click="loadTracks()" type="submit">Reset</button>
         </span>
       </div>
     </div>
@@ -57,10 +58,11 @@
   <button next-track>Next Track</button>
   -
   <button clear-playlist>Clear Playlist</button>
+  <button play-all='tracks' data-play="false">Add all tracks</button>
   <div class="list-group">
-    <div class="list-group-item" ng-repeat="track in tracks">
+    <div class="list-group-item" ng-repeat="track in tracks" >
       <div class="row-action-primary">
-        <i class="fa pull-left fa-play-circle fa-3x" play-all="tracks" data-play="true" ng-click="playTrack(track)"  ng-if="(!isPlaying && currentPlaying.id == track.id) || currentPlaying.id !== track.id" ></i>
+        <i class="fa pull-left fa-play-circle fa-3x" play-from-playlist="track"  ng-if="(!isPlaying && currentPlaying.id == track.id) || currentPlaying.id !== track.id" ></i>
        <i class="fa pull-left fa-3x fa-pause-circle" pause-music ng-show="currentPlaying.id == track.id" ng-if="isPlaying"></i>
 
       </div>
