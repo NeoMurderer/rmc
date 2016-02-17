@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   post :fire, to: 'events#fire'
-  get :find, to: 'vk#find'
+  get :tracks, to: 'vk#tracks'
   get :callback, to: 'dashboard#callback'
   get :friends, to: 'friends#find'
 end

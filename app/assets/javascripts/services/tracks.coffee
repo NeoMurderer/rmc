@@ -2,4 +2,4 @@
 
 angular.module 'musicBox'
   .factory 'Tracks',($resource) ->
-    return $resource("/find");
+    return $resource("/tracks");
